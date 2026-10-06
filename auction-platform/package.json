@@ -1,0 +1,35 @@
+{
+  "name": "bidnova-auction-platform",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c green,cyan \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "node --watch server/index.js",
+    "dev:client": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "check": "node --check server/index.js && node --check server/store.js && node --check server/insights.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie": "^0.7.2",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "vite": "^6.1.0"
+  }
+}
